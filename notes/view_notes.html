@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <link rel="stylesheet" href="view_notes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 
-  
  </head>
 
 <body onload="notes_add();">
@@ -69,7 +69,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel"></h5>
+          <h5 class="modal-sub" id="staticBackdropLabel"></h5>
         </div>
         <div class="modal-header">
           <h6 class="modal-title" id="staticBackdropLabel"></h6>
@@ -91,13 +91,13 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-          <button type="button" class="btn btn-primary" >Yes</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="rem_fav"class="modal" tabindex="-1">
+  <!--div id="rem_fav"class="modal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -112,9 +112,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div-->
 
-  <div id="del_fav"class="modal" tabindex="-1">
+  <!--div id="del_fav"class="modal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -129,7 +129,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div-->
     
   
 
@@ -139,6 +139,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="viewnotes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="viewnotes_copy.js"></script>
 </body>
 </html>

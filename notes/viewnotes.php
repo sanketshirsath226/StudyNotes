@@ -10,7 +10,7 @@
  if (mysqli_num_rows($result) > 0) {
    while ($row = mysqli_fetch_array($result))
     {
-            
+            $main_notes[$i]["id"]=($row["ID"]);
             $main_notes[$i]['Subject']= strval($row['Subjects']);
             $main_notes[$i]['Title']=strval($row['Title']);
             $main_notes[$i]['Note']=strval($row['Notes']);

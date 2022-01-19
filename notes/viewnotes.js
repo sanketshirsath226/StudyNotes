@@ -61,9 +61,7 @@ function notes_add()
             var cardtitle= document.createElement('h6');
             cardtitle.className="card-title";
             cardbody.appendChild(cardtitle);
-            cardtitle.innerHTML="Subject : " + String(data[i]['Subject']);
-            // console.log("Subject : " + String(data[i]['Subject']).substr(0,String(data[i]['Subject']).lastIndexOf('(')));
-            
+            cardtitle.innerHTML="Subject : " + String(data[i]['Subject']);            
 
             var hr = document.createElement('hr');
             cardbody.appendChild(hr);
@@ -120,7 +118,6 @@ function notes_add()
                f_count = 0;
                c_count=0;
                $('#fav').modal('show');
-               
                document.getElementById("fav").getElementsByClassName("btn")[1].addEventListener('click' , function()
                {
                 if(f_count == 0)
@@ -136,12 +133,9 @@ function notes_add()
                   },
                   success: function(data)
                   {
-/*                         document.getElementsByClassName('message')[0].style.display="block";
 
- */ 
                   }
                 }); 
-                console.log();
                 $('#fav').modal('hide');
                 f_count++;
                 }
@@ -184,7 +178,6 @@ function notes_add()
 
                     }
                   }); 
-                console.log(id_details);
                 $('#rem_fav').modal('hide');
                 r_f_count++;
                 }
@@ -202,56 +195,6 @@ function notes_add()
             }
             },false);
           }
-          
-          /*Delete Loop*/
-          // var i_loops = document.getElementsByClassName("con")[0].getElementsByTagName('i');
-          for(i=0 ; i<=i_loops.length;i++)
-          {
-            i_loops[i].addEventListener('click', function() 
-            {
-              i_details=this.id;
-              i_details = i_details.split(' ')[1];
-
-              console.log(i_details);
-              d_f_count=0;
-              d_c_count=0;
-               $('#del_fav').modal('show');
-               
-               document.getElementById("del_fav").getElementsByClassName("btn")[1].addEventListener('click' , function()
-               {
-                if(d_f_count == 0)
-                {
-                 $.ajax({
-                  type:"POST",
-                  url:"http://localhost/notes/viewnotes_del_fav.php",
-                  dataType:'text',
-                  data:{
-                    Subject  : document.getElementById('card ' + i_details).getElementsByClassName('card-title')[0].innerHTML.substring(document.getElementById('card ' + i_details).getElementsByClassName('card-title')[0].innerHTML.lastIndexOf(':')+2),
-                    Title : document.getElementById('card ' + i_details).getElementsByClassName('card-subtitle')[0].innerHTML.substring(document.getElementById('card ' + i_details).getElementsByClassName('card-subtitle')[0].innerHTML.lastIndexOf(':')+2),
-                    Notes : document.getElementById('card ' + i_details).getElementsByClassName('card-text')[0].innerHTML
-                  },
-                  success: function(data)
-                  {
-                    location.reload();
-                  }
-                }); 
-                  console.log(i_details);
-                  $('#del_fav').modal('hide');
-                  d_f_count++;
-                }
-                },false);
-                document.getElementById("del_fav").getElementsByClassName("btn")[0].addEventListener('click' , function()
-                {
-                  if(d_c_count==0)
-                  {
-                    console.log('Cancel'+ i_details);
-                    $('#del_fav').modal('hide');
-                    d_c_count++;
-                  }
-               },false);             
-            },false);
-          }
-          location.reload();
         },
         error: function (request, status, error) {
           alert(error);
