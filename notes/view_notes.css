@@ -1,0 +1,235 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+
+.con {
+  width: 80%;
+  padding-right: 15px;
+  padding-left: 15px;
+  transition: all .5s;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notes_div
+{
+  width: 92%;
+  float: left;
+}
+.card
+{
+    display: inline-block;
+    width: 23rem; 
+    height:18rem;
+    margin-top: 1rem;
+    margin-left:1rem;
+}
+.card-text
+{
+  height: 9rem;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: small;
+}
+
+ .wrapper {
+    position: relative;
+    border: none;
+    font-size: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .wrapper input {
+    border: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    opacity: 0;
+  }
+  
+  .wrapper label {
+    position: relative;
+    float: right;
+    color: #C8C8C8;
+  }
+  
+  .wrapper label:before {
+    content: "\f005";
+    font-family: FontAwesome;
+    display: inline-block;
+    font-size: 1.5em;
+    color: #ccc;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+  }
+  
+  .wrapper input:checked ~ label:before {
+    color: #FFC107;
+  }
+  
+  .wrapper label:hover ~ label:before {
+    color: #ffdb70;
+  }
+  
+  .wrapper label:hover:before {
+    color: #FFC107;
+  }
+
+
+  .message {
+    display: none;
+    position: absolute;
+    top : 100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 300px;
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    font-weight: 300;
+    color: #2c2928;
+    opacity: 0;
+    transition: top 0.3s cubic-bezier(0.31, 0.25, 0.5, 1.5), opacity 0.2s ease-in-out;
+  }
+  .message .check {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(4);
+    width: 120px;
+    height: 110px;
+    background: #71c341;
+    color: white;
+    font-size: 3.8rem;
+    padding-top: 10px;
+    border-radius: 50%;
+    opacity: 0; 
+    transition: transform 0.2s 0.25s cubic-bezier(0.31, 0.25, 0.5, 1.5), opacity 0.1s 0.25s ease-in-out;
+  }
+  .message .scaledown {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  .message p {
+    font-size: 1.1rem;
+    margin: 25px 0px;
+    padding: 0;
+  }
+  .message p:nth-child(2) {
+    font-size: 2.3rem;
+    margin: 40px 0px 0px 0px;
+  }
+  .message #ok {
+    position: relative;
+    color: white;
+    border: 0;
+    background: #71c341;
+    width: 100%;
+    height: 50px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    transition: background 0.2s ease;
+    outline: none;
+  }
+  .message #ok:hover {
+    background: #8ecf68;
+  }
+  .message #ok:active {
+    background: #5a9f32;
+  }
+  
+  .comein {
+    top: 150px;
+    opacity: 1;
+  }
+
+  
+/* Trash */ 
+p
+{
+  cursor:default;
+  text-align: justify;
+}
+.fa-trash-o
+  {
+    position: relative;
+    top : 125px;
+    left: 3%;
+    font-size: xx-large;
+    cursor:pointer;
+  }
+
+.hide{
+  display: none;
+}
+.check_filter
+{
+  position: absolute;
+  right: 0;
+  display: none;
+}
+.check_filter_1
+{
+  position: absolute;
+  right: 15%;
+  display: none;
+}
+/*Filter*/
+.fa-filter
+{
+  font-size: xx-large;
+  position: absolute;
+  right: 0;
+}
+/*DropDown*/
+
+.dropdown
+{
+  width: 10%;
+  position: absolute;
+  transition: all .5s;
+  right:-15%;
+  top:13%;
+}
+.list-group
+{
+  width: fit-content;
+  position: absolute;
+  transition: all .5s;
+  right:-10%;
+  top:34%;
+}
+.check_filter:checked ~  .con
+{
+  transition: all .5s;
+  position: relative;
+  left: -3%;
+}
+.check_filter:checked ~ .dropdown
+{
+  
+  right: 3%;
+  transition: all .5s;
+  
+}
+
+.check_filter_1:checked ~ .list-group
+{
+  right:  7%;
+  transition: all .5s;
+}
+
